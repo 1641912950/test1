@@ -1,0 +1,13 @@
+password = input("请输入字符串：")  #输入要加密的密码字符
+passlength = input('请输入要加密所移动的单位:')   #移动的单位
+for c in password:                  #进入加密过程
+    if 'a'<= c <= 'z':
+        print(chr(ord('a') + (ord(c) - ord('a') + int(passlength)) % 26), end="")  #利用ascllc码来加密
+    elif"A" <= c <="Z":
+        print(chr(ord("A") + (ord(c) - ord("A") + int(passlength)) % 26), end="") #字母向后移取5位
+    else:
+        print(c,end="")  
+secure_password = chr(ord('a') + (ord(c) - ord('a') + 2) % 26)    #记录加密后的密码，准备解密
+
+
+#输入解密的密码
